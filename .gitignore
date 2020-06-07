@@ -1,0 +1,3 @@
+pycaret/xgboost/libxgboost.so
+pycaret/etc/jupyter/nbconfig/notebook.d/widgetsnbextension.json
+pycaret/etc/jupyter/nbconfig/notebook.d/plotlywidget.json
