@@ -1,4 +1,6 @@
 # Created by Paul A. Gureghian in Oct 2020.
+# This Python program generates a random number between 1 and 100
+# Then compares it with a user inputted number
 
 # Import library
 import random
@@ -9,10 +11,9 @@ def new_rand_num_generator():
     return random.randint(1, 10)
 
 # Define 'start_game' function
-
 def start_game():
 
-    number_of_attempts = 0;
+    number_of_attempts = 0
 
     print("")
     print("---------------------------------------")
@@ -22,20 +23,36 @@ def start_game():
 
     # Generate a randon number between 1 - 10
     rand_num = new_rand_num_generator()
-    
+
     # Get user number
     number = int(input("Enter a number between 1 and 10: "))
     print("")
 
-    if number > rand_num:
-        print("It's lower")
+    while number != rand_num:
 
-    elif number < rand_num:
-        print("It's higher")
+        try:
 
-    else:
-        print("Got it")
+            if number > rand_num:
+                number_of_attempts += 1
+                print("It's lower")
+                break
+
+            elif number < rand_num:
+                number_of_attempts += 1
+                print("It's higher")
+                break
+
+            else:
+                number_of_attempts += 1
+                print("You got it , it took you",number_of_attempts, "attempts")
+                print("")
+                print("The game is over\n")
+                break
         
-    print("The game is over\n")    
+        except ValueError as err:
 
+                print("The inputted value needs to be a number between 1 and 10")
+                print("({}".format(err))
+
+# Call the start_game function
 start_game()
