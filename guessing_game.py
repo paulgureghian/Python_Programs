@@ -31,16 +31,18 @@ def start_game():
     while number != rand_num:
 
         try:
+            
+            number = int(input("Enter a number between 1 and 10: "))
 
             if number > rand_num:
                 number_of_attempts += 1
                 print("It's lower")
-                break
+                
 
             elif number < rand_num:
                 number_of_attempts += 1
                 print("It's higher")
-                break
+                
 
             else:
                 number_of_attempts += 1
