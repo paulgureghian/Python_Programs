@@ -27,52 +27,60 @@ def start_game():
 
     # Get user number
     try:
-            
+
         number = int(input("Enter a number between 1 and 10: "))
         print("")
-        
+
+        if number < 1 or number > 10:
+            raise ValueError("Enter a number between 1 and 10")
+
         if number == rand_num:
-            
+
             number_of_attempts += 1
-            print("You got it, it took you",number_of_attempts, "attempt")
+            print("You got it, it took you", number_of_attempts, "attempt")
             print("")
 
         else:
+
             number_of_attempts += 1
             print("Wrong guess, try again \n")
 
     except ValueError as err:
-            print("Wrong value, enter a number between 1 and 10")
-            print("({})".format(err))
+        print("Wrong value, enter a number between 1 and 10 \n".format(err))
 
     while number != rand_num:
-                
+
         try:
-            
+
             number = int(input("Enter a number between 1 and 10: "))
             print("")
-            
+
+            if number < 1 or number > 10:
+                raise ValueError("Enter a number between 1 and 10")
+
             if number > rand_num:
+
                 number_of_attempts += 1
                 print("It's lower")
-                print("")                
+                print("")
 
             elif number < rand_num:
+
                 number_of_attempts += 1
                 print("It's higher")
                 print("")
 
             else:
+
                 number_of_attempts += 1
-                print("You got it, it took you",number_of_attempts, "attempts")
+                print("You got it, it took you",
+                      number_of_attempts, "attempts")
                 print("")
                 print("The game is over\n")
                 break
-        
-        except ValueError as err:
 
-                print("The inputted value needs to be a number between 1 and 10")
-                print("({}".format(err))
+        except ValueError as err:
+            print("Wrong value, enter a number between 1 and 10 \n".format(err))
 
 # Call the start_game function
 start_game()
