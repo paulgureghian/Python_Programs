@@ -48,36 +48,35 @@ def start_game():
     except ValueError as err:
         print("Wrong value, enter a number between 1 and 10 \n".format(err))
 
-    while number != rand_num:
-
         try:
 
             number = int(input("Enter a number between 1 and 10: "))
             print("")
 
-            if number < 1 or number > 10:
-                raise ValueError("Enter a number between 1 and 10")
+            while number != rand_num:
 
-            if number > rand_num:
+                if number < 1 or number > 10:
+                    raise ValueError("Enter a number between 1 and 10")
 
-                number_of_attempts += 1
-                print("It's lower")
-                print("")
+                if number > rand_num:
 
-            elif number < rand_num:
+                    number_of_attempts += 1
+                    print("It's lower")
+                    print("")
 
-                number_of_attempts += 1
-                print("It's higher")
-                print("")
+                elif number < rand_num:
 
-            else:
+                    number_of_attempts += 1
+                    print("It's higher")
+                    print("")
 
-                number_of_attempts += 1
-                print("You got it, it took you",
-                      number_of_attempts, "attempts")
-                print("")
-                print("The game is over\n")
-                break
+                else:
+
+                    number_of_attempts += 1
+                    print("You got it, it took you", number_of_attempts, "attempts")
+                    print("")
+                    print("The game is over\n")
+                    break
 
         except ValueError as err:
             print("Wrong value, enter a number between 1 and 10 \n".format(err))
