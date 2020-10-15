@@ -48,6 +48,7 @@ def start_game():
     except ValueError as err:
         print("Wrong value, enter a number between 1 and 10 \n".format(err))
 
+        # Compare inputted number to rand_num
         try:
 
             number = int(input("Enter a number between 1 and 10: "))
