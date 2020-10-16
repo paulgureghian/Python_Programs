@@ -5,7 +5,7 @@
 # Import library
 import random
 
-# Generate a new random number
+# Define a function which generates a random number
 def new_rand_num_generator():
 
     return random.randint(1, 10)
@@ -21,11 +21,11 @@ def start_game():
     print("---------------------------------------")
     print("")
 
-    # Generate a randon number between 1 - 10
+    # Generate a random number between 1 - 10
     rand_num = new_rand_num_generator()
     print("Random number is:", rand_num, "\n")
 
-    # Get user number
+    # Get a user number and compare it to the rand_num
     try:
 
         number = int(input("Enter a number between 1 and 10: "))
@@ -48,36 +48,36 @@ def start_game():
     except ValueError as err:
         print("Wrong value, enter a number between 1 and 10 \n".format(err))
 
-        # Compare inputted number to rand_num
+    while number != rand_num:
+
         try:
 
             number = int(input("Enter a number between 1 and 10: "))
             print("")
 
-            while number != rand_num:
+            if number < 1 or number > 10:
+                raise ValueError("Enter a number between 1 and 10")
 
-                if number < 1 or number > 10:
-                    raise ValueError("Enter a number between 1 and 10")
+            if number > rand_num:
 
-                if number > rand_num:
+                number_of_attempts += 1
+                print("It's lower")
+                print("")
 
-                    number_of_attempts += 1
-                    print("It's lower")
-                    print("")
+            elif number < rand_num:
 
-                elif number < rand_num:
+                number_of_attempts += 1
+                print("It's higher")
+                print("")
 
-                    number_of_attempts += 1
-                    print("It's higher")
-                    print("")
+            else:
 
-                else:
-
-                    number_of_attempts += 1
-                    print("You got it, it took you", number_of_attempts, "attempts")
-                    print("")
-                    print("The game is over\n")
-                    break
+                number_of_attempts += 1
+                print("You got it, it took you",
+                      number_of_attempts, "attempts")
+                print("")
+                print("The game is over\n")
+                break
 
         except ValueError as err:
             print("Wrong value, enter a number between 1 and 10 \n".format(err))
