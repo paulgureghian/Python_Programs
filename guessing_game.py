@@ -1,5 +1,5 @@
 # Created by Paul A. Gureghian in Oct 2020.
-# This Python program generates a random number between 1 and 100
+# This Python program generates a random number between 1 and 10
 # Then compares it with a user inputted number
 
 # Import library
@@ -73,8 +73,7 @@ def start_game():
             else:
 
                 number_of_attempts += 1
-                print("You got it, it took you",
-                      number_of_attempts, "attempts")
+                print("You got it, it took you", number_of_attempts, "attempts")                      
                 print("")
                 print("The game is over\n")
                 break
